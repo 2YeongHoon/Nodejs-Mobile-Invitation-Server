@@ -6,13 +6,13 @@
  docker-compose up -d
 
 - docker compose 접속
- docker exec -it odora_db bash
+ docker exec -it mobile_invitation_db bash
 
 - mysql login
  mysql -u root -p 
 
 - docker 컨테이너 종료(삭제)
- docker rm -f odora_db
+ docker rm -f mobile_invitation_db
 ```
 
 ```
