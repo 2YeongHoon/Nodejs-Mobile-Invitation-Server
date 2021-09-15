@@ -5,7 +5,7 @@
     "username": "root",
     "password": "odora",
     "database": "mobile_invitation_db", 
-    "synchronize": false,
+    "synchronize": true,
     "logging": ["info","query"],
     "entities": [
        "src/entity/*.ts"

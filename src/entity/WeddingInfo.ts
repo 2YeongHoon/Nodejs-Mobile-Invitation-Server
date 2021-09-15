@@ -56,13 +56,13 @@ export class WeddingInfo extends BaseEntity {
     @OneToMany(() => Videos, (videos) => videos.idx)
     videos: Videos[];
 
-    @Column()
+    @Column({nullable: true})
     groomName: string;
 
-    @Column()
+    @Column({nullable: true})
     groomFather: string;
     
-    @Column()
+    @Column({nullable: true})
     groomMother: string;
 
     @Column({
@@ -72,25 +72,25 @@ export class WeddingInfo extends BaseEntity {
     })
     groomRelation: GroomRelationEnum[]
 
-    @Column()
+    @Column({nullable: true})
     groomPhone: string;
 
-    @Column()
+    @Column({nullable: true})
     groomBank: string;
 
-    @Column()
+    @Column({nullable: true})
     groomAccountOwn: string;
 
-    @Column()
+    @Column({nullable: true})
     groomAccountNum: string;
 
-    @Column()
+    @Column({nullable: true})
     brideName: string;
 
-    @Column()
+    @Column({nullable: true})
     brideFather: string;
 
-    @Column()
+    @Column({nullable: true})
     brideMother: string;
 
     @Column({
@@ -100,42 +100,42 @@ export class WeddingInfo extends BaseEntity {
     })
     brideRelation: BrideRelationEnum[]
 
-    @Column()
+    @Column({nullable: true})
     bridePhone: string;
 
-    @Column()
+    @Column({nullable: true})
     brideBank: string;
 
-    @Column()
+    @Column({nullable: true})
     brideAccountOwn: string;
     
-    @Column()
+    @Column({nullable: true})
     brideAccountNum: string;
 
-    @Column()
+    @Column({nullable: true})
     weddingHall: string;
 
-    @Column()
+    @Column({nullable: true})
     detailAddress: string;
 
-    @Column()
+    @Column({nullable: true})
     address: string;
 
-    @Column()
+    @Column({nullable: true})
     wayToCome: string;
 
-    @Column()
+    @Column({nullable: true})
     weddingDate: Date;
 
-    @Column()
+    @Column({nullable: true})
     greetingsTitle: string;
 
-    @Column()
+    @Column({nullable: true})
     greetingsBody: string;
 
-    @Column()
+    @Column({nullable: true})
     text: string;
 
-    @Column()
+    @Column({nullable: true})
     notice: string;
 }

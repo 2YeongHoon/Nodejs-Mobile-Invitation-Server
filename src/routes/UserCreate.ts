@@ -1,14 +1,10 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
-// import {User} from "../entity/User";
-// import {Images} from "../entity/Images";
-// import {Videos} from "../entity/Videos";
-// import {WeddingInfo} from "../entity/WeddingInfo";
-
-// import User = require('../entity/User');
 import { userInfo } from "os";
 import { User } from "../entity/User";
 import { WeddingInfo } from "../entity/WeddingInfo";
+import { Images } from "../entity/Images";
+import { Videos } from "../entity/Videos";
 
 var express = require('express');
 var router = express.Router();

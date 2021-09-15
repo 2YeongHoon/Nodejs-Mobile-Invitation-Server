@@ -11,7 +11,7 @@ export class Images extends BaseEntity {
     @JoinColumn()
     weddingInfo: WeddingInfo;
 
-    @Column()
+    @Column({nullable: true})
     imageKey: string;
 
     @Column({
