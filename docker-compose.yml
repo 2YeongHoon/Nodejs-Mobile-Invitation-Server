@@ -7,12 +7,15 @@ services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
     platform: linux/x86_64
     ports:
       - '3306:3306' # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)
+    expose:
+      - '3306'
     environment: # -e 옵션
       # MYSQL_RANDOM_ROOT_PASSWORD: "true"
       # MYSQL_USER: odora
       # MYSQL_PASSWORD: odora
       # MYSQL_DATABASE: odora
       MYSQL_ROOT_PASSWORD: 'odora' # MYSQL 패스워드 설정 옵션
+      MYSQL_TCP_PORT: '3306'
     command: # 명령어 실행
       # 중요 21.08 기준으로 Mysql8 로그인 인증 plugin을 Node 모듈에서 지원하지 않는 듯
       # "ALTER USER 'root'@'%' IDENTIF IED WITH mysql_native_password BY 'odora';" 커맨드로 계정 로그인 인증 모듈 변경
