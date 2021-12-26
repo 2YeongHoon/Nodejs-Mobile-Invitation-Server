@@ -1,7 +1,8 @@
 # mobile-invitation
+
 모바일청첩장 프로젝트
 
-``` 초기설정
+```초기설정
 - docker실행
  docker-compose up -d
 
@@ -9,7 +10,7 @@
  docker exec -it mobile_invitation_db bash
 
 - mysql login
- mysql -u root -p 
+ mysql -u root -p
 
 - database 수동 생성
  CREATE DATABASE mobile_invitation_db;
@@ -18,8 +19,7 @@
   ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'odora';
 ```
 
-``` 명령어
+```명령어
 - docker 컨테이너 종료(삭제)
  docker rm -f mobile_invitation_db
 ```
-
