@@ -6,7 +6,7 @@ import {
   BaseEntity,
   JoinColumn
 } from 'typeorm'
-import { WeddingInfo } from './WeddingInfo'
+import { WeddingInfo } from './WeddingInfoEntity'
 export type ImageTypeEnum = 'image' | 'main' | 'map'
 
 @Entity()

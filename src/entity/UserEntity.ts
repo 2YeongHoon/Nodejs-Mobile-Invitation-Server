@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, BaseEntity} from "typeorm";
-import { WeddingInfo } from "./WeddingInfo";
+import { WeddingInfo } from "./WeddingInfoEntity";
 
 @Entity()
 export class User extends BaseEntity{
