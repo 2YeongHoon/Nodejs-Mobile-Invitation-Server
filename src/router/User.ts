@@ -13,19 +13,22 @@ var router = express.Router()
 // Usercheck
 router.post('/user-check', async (req, res) => {
   try {
-    // console.log('req1', req.body)
-    // console.log('req2', req.body.phoneNum)
-    const userId = req.body.phoneNum
-    const passWord = req.body.passWord
-    // console.log('passWord', req.body.userId)
+    const userName = req.body.userName
+    const userPass = req.body.userPass
 
-    const userIdCheck = await User.findOneOrFail({ userName: userId })
-    // console.log('userIdCheck', userIdCheck)
-
-    // const userIdCheck2 = await User.findOne(userId)
-    // console.log('userIdCheck2', userIdCheck2)
-
-    res.send(userIdCheck)
+    const userIdCheck = await User.findOneOrFail({ userName: userName })
+    console.log('userIdcheck', userIdCheck)
+    if (userIdCheck.userName == userName) {
+      if (userIdCheck.userPass == userPass) {
+        res.send(userIdCheck)
+      } else {
+        res.send('Password가 일치하지 않습니다.')
+      }
+    } else {
+      await User.save(req.body)
+      await WeddingInfo.save(req.body)
+    }
+    return 'done'
   } catch (e) {
     res.send({
       message: e
