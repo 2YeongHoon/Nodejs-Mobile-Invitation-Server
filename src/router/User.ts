@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import { createConnection } from 'typeorm'
+import { IsNull, createConnection } from 'typeorm'
 import { userInfo } from 'os'
 import { User } from '../entity/UserEntity'
 import { WeddingInfo } from '../entity/WeddingInfoEntity'
@@ -10,25 +10,30 @@ import { lookupService } from 'dns'
 var express = require('express')
 var router = express.Router()
 
-// Usercheck
+// UserCheck
 router.post('/user-check', async (req, res) => {
-  try {
-    const userName = req.body.userName
-    const userPass = req.body.userPass
+  const userName = req.body.userName
+  const userPass = req.body.userPass
 
-    const userIdCheck = await User.findOneOrFail({ userName: userName })
-    console.log('userIdcheck', userIdCheck)
+  try {
+    const userIdCheck = await User.findOne({
+      userName: userName
+    })
+
+    if (userIdCheck == null) {
+      await User.save(req.body)
+      res.send('user create....')
+      return 'database create'
+    }
+
     if (userIdCheck.userName == userName) {
       if (userIdCheck.userPass == userPass) {
         res.send(userIdCheck)
       } else {
-        res.send('Password가 일치하지 않습니다.')
+        res.send('Password Incorrect....')
       }
-    } else {
-      await User.save(req.body)
-      await WeddingInfo.save(req.body)
     }
-    return 'done'
+    res.send('end')
   } catch (e) {
     res.send({
       message: e
