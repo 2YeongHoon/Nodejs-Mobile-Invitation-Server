@@ -16,7 +16,7 @@
  CREATE DATABASE mobile_invitation_db;
 
  - Mysql8 - node사이의 인증모듈 문제로 Plugin 변경 필요(console에서 root 계정 로그인하여 진행)
-  ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'odora';
+  ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '<passwd>';
 ```
 
 ```명령어
