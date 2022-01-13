@@ -6,10 +6,12 @@ import { WeddingInfo } from '../entity/WeddingInfoEntity'
 import { Images } from '../entity/ImagesEntity'
 import { Videos } from '../entity/VideosEntity'
 import { lookupService } from 'dns'
+import * as express from 'express'
 
-var express = require('express')
 var router = express.Router()
 
 router.post('/save', async (req, res) => {
   await WeddingInfo.save(req.body)
 })
+
+export default router

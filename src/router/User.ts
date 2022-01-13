@@ -6,8 +6,8 @@ import { WeddingInfo } from '../entity/WeddingInfoEntity'
 import { Images } from '../entity/ImagesEntity'
 import { Videos } from '../entity/VideosEntity'
 import { lookupService } from 'dns'
+import * as express from 'express'
 
-var express = require('express')
 var router = express.Router()
 
 // UserCheck
@@ -58,4 +58,4 @@ router.post('/user-check', async (req, res) => {
 //   }
 // })
 
-module.exports = router
+export default router
